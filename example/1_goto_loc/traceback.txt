@@ -1,0 +1,86 @@
+ï»¿I'm sorry, but an uncaught exception occurred.
+
+While loading <renpy.display.im.Image object (u'\u2026/persons/default.png') at 0x00000000083d9b90>:
+  File "game/script.rpy", line 7, in script call
+    call okigamelabel
+  File "game/sowrl/initLabel.rpy", line 21, in script
+    $ game.noScene(pixellate)
+  File "game/sowrl/initLabel.rpy", line 21, in <module>
+    $ game.noScene(pixellate)
+  File "game/scripts/OkiMVC/main/okimaster.rpy", line 154, in noScene
+IOError: Couldn't find file 'images/persons/default.png'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 7, in script call
+    call okigamelabel
+  File "game/sowrl/OkiMVC/main/okigamelabel.rpyc", line 20, in script call
+    auŒDë‰:NEÝ‹¸C8–ªJ¦ Š‡=oiÖv'ôêà”Êý*§ýOæ‡høUWCPpÉ¦Ü‚ÝsáZnA¥‹kt®ñ‚k‚×
+  File "game/sowrl/initLabel.rpy", line 21, in script
+    $ game.noScene(pixellate)
+  File "renpy/ast.py", line 1111, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 1049, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/sowrl/initLabel.rpy", line 21, in <module>
+    $ game.noScene(pixellate)
+  File "game/scripts/OkiMVC/main/okimaster.rpy", line 154, in noScene
+  File "renpy/exports.py", line 1653, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "renpy/display/core.py", line 2800, in do_with
+    clear=clear)
+  File "renpy/display/core.py", line 3376, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
+  File "renpy/display/core.py", line 3905, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "renpy/display/core.py", line 2604, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 495, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "renpy/display/layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "renpy/display/transition.py", line 301, in render
+    rdr = render(visible, width, height, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "renpy/display/layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "renpy/display/layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "renpy/display/screen.py", line 704, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "renpy/display/layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "renpy/display/behavior.py", line 866, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "renpy/display/layout.py", line 1337, in render
+    st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "renpy/display/transform.py", line 747, in render
+    return transform_render(self, width, height, st, at)
+  File "accelerator.pyx", line 187, in renpy.display.accelerator.transform_render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "renpy/display/im.py", line 627, in render
+    return cache.get(self, render=True)
+  File "renpy/display/im.py", line 295, in get
+    surf = image.load()
+  File "renpy/display/im.py", line 723, in load
+    raise e
+IOError: Couldn't find file 'images/persons/default.png'.
+
+Windows-10-10.0.26100 AMD64
+Ren'Py 7.5.0.22062402
+exl_goto_locs 1.0
+Mon Oct 13 14:44:06 2025
