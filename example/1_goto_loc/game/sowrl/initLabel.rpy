@@ -14,8 +14,15 @@ label okiinit:
     $ clickies.add('hollowRadio', 'village', 900, 100)  # clickable object in location "village"
     return
 
-label radio:
+# for clickable objects we have to use prefix "clicky_" + id name for object
+label clicky_radio:
     $ game.Scene()
     $ places.go_to('village')
     $ game.noScene(pixellate)
+    return
+
+label clicky_hollowRadio:
+    $ game.Scene()
+    $ places.go_to('room')
+    $ game.noScene(fade)
     return
