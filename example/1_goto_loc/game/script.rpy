@@ -5,5 +5,6 @@
 label start:
 
     call okigamelabel
+    $ places.set_location('room')   # set starting location
 
     return

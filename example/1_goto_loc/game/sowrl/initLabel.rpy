@@ -12,8 +12,7 @@ label okiinit:
 
     $ clickies.add('radio', 'room', 600, 100)           # create clickable object with sprite and label "radion" in location with id "room"
     $ clickies.add('hollowRadio', 'village', 900, 100)  # clickable object in location "village"
-
-    $ places.set_location('room')   # set location
+    return
 
 label radio:
     $ game.Scene()
