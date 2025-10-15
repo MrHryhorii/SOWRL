@@ -47,3 +47,19 @@ Version: '4.6.0 Compatibility Profile Context 22.20.24.02.220906'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1813, 1020) drawable=(1813, 1020)
 Maximum texture size: 4096x4096
+Clicky:clicky_radio
+Person:no_label
+Person:no_label
+Person:no_label
+Person:no_label
+Person:no_label
+Clicky:clicky_hollowRadio
+Clicky:clicky_radio
+Clicky:clicky_hollowRadio
+Clicky:clicky_radio
+Clicky:clicky_hollowRadio
+Clicky:clicky_radio
+Person:no_label
+Clicky:clicky_hollowRadio
+Clicky:clicky_radio
+Clicky:clicky_hollowRadio
