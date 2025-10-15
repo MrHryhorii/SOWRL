@@ -63,3 +63,13 @@ Person:no_label
 Clicky:clicky_hollowRadio
 Clicky:clicky_radio
 Clicky:clicky_hollowRadio
+Clicky:clicky_radio
+Clicky:clicky_hollowRadio
+Clicky:clicky_radio
+Clicky:clicky_hollowRadio
+Clicky:clicky_radio
+Clicky:clicky_hollowRadio
+Clicky:clicky_radio
+Clicky:clicky_hollowRadio
+Clicky:clicky_radio
+Clicky:clicky_hollowRadio
