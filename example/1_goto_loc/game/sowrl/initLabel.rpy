@@ -50,6 +50,7 @@ label clicky_hollowRadio:
     $ game.noScene(fade)
     return
 
+# to talk with characters we have to use prefix "person_" + id name for character(person)
 # John talk: first vs repeat
 label person_john:
     # First time
@@ -83,7 +84,7 @@ label village_hub:
 
 # triggered event if we met Jane and John
 label event_1_label:
-    you "I prepered to go to forest"
+    you "I prepered to go to the forest"
     return
 
 # first time in the forest
