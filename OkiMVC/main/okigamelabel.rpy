@@ -57,7 +57,7 @@ label okigamelabel:
     return
 
 label no_label:
-    'Нет действия!'
+    'No action!'
     return
 
 transform oki_matrix(from_matrix, to_matrix, timepiece=0.5):

@@ -12,6 +12,18 @@ label okiinit:  # this label initialize game resources (important to have it)
 
     $ clickies.add('radio', 'room', 600, 100)           # create clickable object with sprite and label "radion" in location with id "room"
     $ clickies.add('hollowRadio', 'village', 900, 100)  # clickable object in location "village"
+
+    # create some variables
+    $ machine.add('isJohn', "false")
+    $ machine.add('isJane', "false")
+
+    # create event on trigger with a name "event_1" and call label with a name "event_1_label"
+    $ triggers.add(
+        "event_1",                                                                  # random name
+        "machine.get('isJohn') == 'true' and machine.get('isJane') == 'true'",      # condition
+        "renpy.call('event_1_label')"                                               # what to do
+    )
+
     return
 
 ### You do not need create all labels inside this file ###
