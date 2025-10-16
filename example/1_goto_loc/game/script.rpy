@@ -1,5 +1,5 @@
 ﻿# The script of the game goes in this file.
-# --- Characters ---
+# --- Characters ---(not important but good to have them)
 define jn = Character("John")
 define je = Character("Jane")
 define you = Character("You")

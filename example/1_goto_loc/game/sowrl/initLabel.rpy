@@ -1,8 +1,6 @@
 label okiinit:  # this label initialize game resources (important to have it)
     # create few locations
     $ places.add('Village', 'village')      # create location with name "Village" and location id "village"
-    $ places.add('Forest', 'forest')        # forest location
-    $ places.add('Castle', 'castle')        # castle location
     $ places.add('Room', 'room')            # castle location
 
     #$ persons.image_type = 'png'            # no need to set "png", "png" is default 
@@ -85,9 +83,4 @@ label village_hub:
 # triggered event if we met Jane and John
 label event_1_label:
     you "I prepered to go to the forest"
-    return
-
-# first time in the forest
-label forest_entry:
-    you "Cold air. Wet bark. Let's keep our steps light."
     return
