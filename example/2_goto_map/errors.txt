@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1: expected statement.
-    ﻿
-     ^
+The label clicky_map_to_forest is defined twice, at File "game/sowrl/initLabel.rpy", line 120:
+label clicky_map_to_forest:
+and File "game/sowrl/initLabel.rpy", line 125:
+label clicky_map_to_forest:
+
 
 Ren'Py Version: Ren'Py 7.5.0.22062402
-Fri Oct 17 12:16:14 2025
+Fri Oct 17 13:56:02 2025

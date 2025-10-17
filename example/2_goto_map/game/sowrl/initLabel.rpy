@@ -103,7 +103,25 @@ label event_1_label:
     you "I prepered to go to the forest."
     you "For some reasons I can use my map."
 
+    # we can create new clickable object here if we want
+    $ clickies.add('map_to_village', 'map', 400, 400) # we will use default image for clickable
+    $ clickies.add('map_to_forest', 'map', 900, 500)
+    $ clickies.add('map_to_castle', 'map', 1000, 300)
+
     $ game.Scene()
     $ clickies.set("map", "isActive", True) # enable clickable button
     $ game.noScene(dissolve)
+    return
+
+# some labels for our map
+label clicky_map_to_village:
+    call clicky_radio
+    return
+label clicky_map_to_forest:
+    $ game.Scene()
+    $ places.go_to('forest')
+    $ game.noScene(dissolve)
+    return
+label clicky_map_to_castle:
+    $ places.go_to('castle')
     return
