@@ -2,6 +2,7 @@ label okiinit:  # this label initialize game resources (important to have it)
     # create few locations
     $ places.add('Village', 'village')      # create location with name "Village" and location id "village"
     $ places.add('Room', 'room')            # castle location
+
     $ places.add('Map', 'map')
     $ places.add('Forest', 'forest')
     $ places.add('Castle', 'castle')
@@ -16,7 +17,9 @@ label okiinit:  # this label initialize game resources (important to have it)
     # create few clickable objects
     $ clickies.add('radio', 'room', 600, 100)           # create clickable object with sprite and label "radion" in location with id "room"
     $ clickies.add('hollowRadio', 'village', 900, 100)  # clickable object in location "village"
-    $ clickies.add('map', ['castle', 'forest', 'room', 'village'], 100, 100)
+
+    $ clickies.add('map', ['castle', 'forest', 'room', 'village'], 100, 100) # set for many location
+    $ clickies.set("map", "isActive", False)                                 # disable clickable button
 
     # create some variables
     $ machine.add('isJohn', "false")
@@ -40,6 +43,7 @@ label okiinit:  # this label initialize game resources (important to have it)
     return  # label's end
 
 ### You do not need create all labels inside this file ###
+### And always close your labels with "return"
 
 # for clickable objects we have to use prefix "clicky_" + id name for object
 # we setting logic on click up
@@ -52,6 +56,12 @@ label clicky_radio:
 label clicky_hollowRadio:
     $ game.Scene()
     $ places.go_to('room')
+    $ game.noScene(fade)
+    return
+
+label clicky_map:
+    $ game.Scene()
+    $ places.go_to('map')
     $ game.noScene(fade)
     return
 
@@ -89,5 +99,11 @@ label village_hub:
 
 # triggered event if we met Jane and John
 label event_1_label:
-    you "I prepered to go to the forest"
+    
+    you "I prepered to go to the forest."
+    you "For some reasons I can use my map."
+
+    $ game.Scene()
+    $ clickies.set("map", "isActive", True) # enable clickable button
+    $ game.noScene(dissolve)
     return
