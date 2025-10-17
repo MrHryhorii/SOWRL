@@ -3,6 +3,10 @@ label okiinit:  # this label initialize game resources (important to have it)
     $ places.add('Village', 'village')      # create location with name "Village" and location id "village"
     $ places.add('Room', 'room')            # castle location
 
+    # set starting location; but we do not need to do it
+    # last added location is default starting location
+    $ places.set_location('room')
+
     #$ persons.image_type = 'png'            # no need to set "png", "png" is default 
     # create few characters
     $ persons.add('Jane', 'Doe', 'jane', 'village', 800, 500)   # create character with name "Jane"(Doe) and character id "jane"

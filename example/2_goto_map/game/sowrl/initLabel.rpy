@@ -2,6 +2,12 @@ label okiinit:  # this label initialize game resources (important to have it)
     # create few locations
     $ places.add('Village', 'village')      # create location with name "Village" and location id "village"
     $ places.add('Room', 'room')            # castle location
+    $ places.add('Map', 'map')
+    $ places.add('Forest', 'forest')
+    $ places.add('Castle', 'castle')
+
+    # set starting location
+    $ places.set_location('room')
 
     #$ persons.image_type = 'png'            # no need to set "png", "png" is default 
     # create few characters
@@ -10,6 +16,7 @@ label okiinit:  # this label initialize game resources (important to have it)
     # create few clickable objects
     $ clickies.add('radio', 'room', 600, 100)           # create clickable object with sprite and label "radion" in location with id "room"
     $ clickies.add('hollowRadio', 'village', 900, 100)  # clickable object in location "village"
+    $ clickies.add('map', ['castle', 'forest', 'room', 'village'], 100, 100)
 
     # create some variables
     $ machine.add('isJohn', "false")
