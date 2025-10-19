@@ -1,22 +1,22 @@
-Sun Oct 19 19:08:47 2025
+Sun Oct 19 21:04:29 2025
 Windows-10-10.0.26100
 Ren'Py 7.5.0.22062402
  
 
-Bootstrap to the start of init.init took 0.08s
+Bootstrap to the start of init.init took 0.10s
 Early init took 0.00s
-Loader init took 0.04s
+Loader init took 0.05s
 Loading error handling took 0.02s
-Loading script took 0.85s
-Loading save slot metadata. took 0.01s
+Loading script took 0.25s
+Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Faled to initialize steam: WindowsError(126, 'The specified module could not be found')
-Running init code took 0.06s
+Running init code took 0.05s
 Loading analysis data took 0.02s
-Analyze and compile ATL took 0.01s
+Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\grigo\\AppData\\Roaming/RenPy/backups\\4_time':
-Dump and make backups. took 0.14s
+Dump and make backups. took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.03s
@@ -28,10 +28,10 @@ Cleaning stores took 0.00s
 Init translation took 0.04s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.03s
+Analyze screens took 0.02s
 Save screen analysis took 0.03s
-Prepare screens took 0.07s
-Save pyanalysis. took 0.04s
+Prepare screens took 0.06s
+Save pyanalysis. took 0.00s
 Save bytecode. took 0.03s
 Running _start took 0.00s
 Performance test:
@@ -46,7 +46,9 @@ Renderer: 'AMD Radeon(TM) Graphics'
 Version: '4.6.0 Compatibility Profile Context 22.20.24.02.220906'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1600, 900) drawable=(1600, 900)
-Could not open 'cache/shaders.txt':
 Maximum texture size: 4096x4096
+Person:person_jane
+Clicky:clicky_time
 Clicky:clicky_radio_to_forest
-Clicky:clicky_radio_to_village
+Person:person_jane
+Person:person_jane

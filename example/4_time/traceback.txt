@@ -1,0 +1,36 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 10, in script call
+    call okigamelabel
+  File "game/sowrl/OkiMVC/main/okigamelabel.rpy", line 20, in script call
+    call okiinit # использовать ярлык на код, где происходит начальная инициализация мира
+  File "game/sowrl/initLabel.rpy", line 32, in script
+    $ date.set_time(8, 30)
+  File "game/sowrl/initLabel.rpy", line 32, in <module>
+    $ date.set_time(8, 30)
+  File "game/scripts/OkiMVC/controllers/okidatecontroller.rpy", line 38, in set_time
+AttributeError: 'OkiDate' object has no attribute 'dateLimits'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 10, in script call
+    call okigamelabel
+  File "game/sowrl/OkiMVC/main/okigamelabel.rpy", line 20, in script call
+    call okiinit # использовать ярлык на код, где происходит начальная инициализация мира
+  File "game/sowrl/initLabel.rpy", line 32, in script
+    $ date.set_time(8, 30)
+  File "renpy/ast.py", line 1111, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 1049, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/sowrl/initLabel.rpy", line 32, in <module>
+    $ date.set_time(8, 30)
+  File "game/scripts/OkiMVC/controllers/okidatecontroller.rpy", line 38, in set_time
+AttributeError: 'OkiDate' object has no attribute 'dateLimits'
+
+Windows-10-10.0.26100 AMD64
+Ren'Py 7.5.0.22062402
+4_time 1.0
+Sun Oct 19 20:21:46 2025
