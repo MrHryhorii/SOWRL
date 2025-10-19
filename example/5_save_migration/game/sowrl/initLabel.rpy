@@ -1,0 +1,137 @@
+label okiinit:  # this label initialize game resources (important to have it)
+    # create few locations
+    $ places.add('Village', 'village')      # create location with name "Village" and location id "village"
+    $ places.add('Room', 'room')            # castle location
+
+    $ places.add('Map', 'map')
+    $ places.add('Forest', 'forest')
+    $ places.add('Castle', 'castle')
+
+    # set starting location
+    $ places.set_location('room')
+
+    #$ persons.image_type = 'png'            # no need to set "png", "png" is default 
+    # create few characters
+    $ persons.add('Jane', 'Doe', 'jane', 'village', 800, 500)   # create character with name "Jane"(Doe) and character id "jane"
+    $ persons.add('John', 'Doe', 'john', 'village', 200, 500)   # character "John"
+    # create few clickable objects
+    $ clickies.add('radio', 'room', 600, 100)           # create clickable object with sprite and label "radion" in location with id "room"
+    $ clickies.add('hollowRadio', 'village', 900, 100)  # clickable object in location "village"
+
+    $ clickies.add('map', ['castle', 'forest', 'room', 'village'], 100, 100) # set for many location
+    $ clickies.set("map", "isActive", False)                                 # disable clickable button
+
+    # create some variables
+    $ machine.add('isJohn', "false")
+    $ machine.add('isJane', "false")
+    $ machine.add('firstTimeVillage', False)
+
+    # create triggers
+    # create event on trigger with a name "event_1" and call label with a name "event_1_label"
+    $ triggers.add(
+        "event_1",                                                                  # random name
+        "machine.get('isJohn') == 'true' and machine.get('isJane') == 'true'",      # condition
+        "renpy.call('event_1_label')"                                               # what to do
+    )
+
+    $ triggers.add(
+        "event_2",                                                                  
+        "places.get_location() == 'village' and not machine.get('firstTimeVillage')",      
+        "renpy.call('village_hub')"                                               
+    )
+
+    return  # label's end
+
+### You do not need create all labels inside this file ###
+### And always close your labels with "return"
+
+# for clickable objects we have to use prefix "clicky_" + id name for object
+# we setting logic on click up
+label clicky_radio:
+    $ game.Scene()
+    $ places.go_to('village')
+    $ game.noScene(pixellate)
+    return
+
+label clicky_hollowRadio:
+    $ game.Scene()
+    $ places.go_to('room')
+    $ game.noScene(fade)
+    return
+
+label clicky_map:
+    $ game.Scene()
+    $ places.go_to('map')
+    $ game.noScene(fade)
+    return
+
+# to talk with characters we have to use prefix "person_" + id name for character(person)
+# John talk: first vs repeat
+label person_john:
+    # First time
+    if machine.get("isJohn") == "false":
+        $ machine.set("isJohn", "true")
+        jn "Road's muddy. If you're wise, you ask Jane before stepping further."
+        jn "She knows which paths bite back."
+        return
+
+    # Repeat (short)
+    jn "Jane's by the well. Don't keep her waiting."
+    return
+
+# Jane talk: first vs repeat
+label person_jane:
+    if machine.get("isJane") == "false":
+        $ machine.set("isJane", "true")
+        je "So John sent you. Good. Hear me once: pack dry tinder."
+        je "And keep your eyes above the roots; the forest likes to trip fools."
+        return
+
+    je "Tinder, water, knife. Then talk."
+    return
+
+
+# first time in the village
+label village_hub:
+    you "Meet John and Jane first. They'll keep you out of the mud."
+    $ machine.set('firstTimeVillage', True)
+    return
+
+# triggered event if we met Jane and John
+label event_1_label:
+    
+    you "I prepered to go to the forest."
+    you "For some reasons I can use my map."
+
+    # we can create new clickable object here if we want
+    $ clickies.add('map_to_village', 'map', 400, 400) # we will use default image for clickable
+    $ clickies.add('map_to_forest', 'map', 900, 500)
+    $ clickies.add('map_to_castle', 'map', 1000, 300)
+
+    $ game.Scene()
+    $ clickies.set("map", "isActive", True) # enable clickable button
+    $ game.noScene(dissolve)
+    return
+
+# some labels for our map
+label clicky_map_to_village:
+    call clicky_radio
+    return
+label clicky_map_to_forest:
+    $ game.Scene()
+    $ places.go_to('forest')
+    $ game.noScene(dissolve)
+    return
+label clicky_map_to_castle:
+    $ places.go_to('castle')
+    return
+
+
+
+# added with first update
+label clicky_from_room_to_castle:
+    $ places.go_to('castle')
+    return
+label clicky_from_castle_to_room:
+    $ places.go_to('room')
+    return
